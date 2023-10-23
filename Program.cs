@@ -33,3 +33,14 @@ int hatodik = sportagak.Count(x => x.Helyezes == 6);
 int olimpiaiPontok = arany*7 + ezust*5 + bronz*4 + negyedik*3 + otodik*2 + hatodik;
 Console.WriteLine("5.Feladat:");
 Console.WriteLine($"\tOlimpiai pontok száma: {olimpiaiPontok}");
+
+Console.WriteLine("6.Feladat:");
+int tornaermek = sportagak.Count(x => x.SportagNeve == "torna" && x.Helyezes < 4);
+int uszasermek = sportagak.Count(x => x.SportagNeve == "uszas" && x.Helyezes < 4);
+
+if (tornaermek > uszasermek)
+    Console.WriteLine("\tTorna sportagban szereztek tobb ermet.");
+else if (tornaermek < uszasermek)
+    Console.WriteLine("\tUszas sportagban szereztek tobb ermet.");
+else
+    Console.WriteLine("\tEgyenlo volt az ermek szama.");
