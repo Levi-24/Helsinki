@@ -78,3 +78,11 @@ using (var sw = new StreamWriter(@"..\..\..\src\helsinki2.txt", false, Encoding.
         sw.WriteLine($"{sportag.Helyezes} {sportag.SportolokSzama} {pont} {sportag.SportagNeve} {sportag.VersenyszamNeve}");
     }
 }
+
+Console.WriteLine("8.Feladat:");
+var legtobbSportolo = sportagak.Find(s => s.SportolokSzama == sportagak.Max(x => x.SportolokSzama));
+
+Console.WriteLine("Helyezes: {0}", legtobbSportolo.Helyezes);
+Console.WriteLine("Sportag: {0}", legtobbSportolo.SportagNeve);
+Console.WriteLine("Versenyszam: {0}", legtobbSportolo.VersenyszamNeve);
+Console.WriteLine("Sportolok szama: {0}", legtobbSportolo.SportolokSzama);
