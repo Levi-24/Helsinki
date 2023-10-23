@@ -46,16 +46,7 @@ else
     Console.WriteLine("\tEgyenlo volt az ermek szama.");
 
 
-//foreach (var sportag in sportagak)
-//{
-//    if (sportag.SportagNeve == "kajakkenu")
-//    {
-//        sportag.SportagNeve = "kajak-kenu";
-//    }
-//}
-
 int pont = 0;
-
 using (var sw = new StreamWriter(@"..\..\..\src\helsinki2.txt", false, Encoding.UTF8))
 {
     foreach (var sportag in sportagak)
