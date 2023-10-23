@@ -44,3 +44,46 @@ else if (tornaermek < uszasermek)
     Console.WriteLine("\tUszas sportagban szereztek tobb ermet.");
 else
     Console.WriteLine("\tEgyenlo volt az ermek szama.");
+
+
+//foreach (var sportag in sportagak)
+//{
+//    if (sportag.SportagNeve == "kajakkenu")
+//    {
+//        sportag.SportagNeve = "kajak-kenu";
+//    }
+//}
+
+int pont = 0;
+
+using (var sw = new StreamWriter(@"..\..\..\src\helsinki2.txt", false, Encoding.UTF8))
+{
+    foreach (var sportag in sportagak)
+    {
+        sportag.SportagNeve = sportag.SportagNeve.Replace("kajakkenu", "kajak-kenu");
+        switch (sportag.Helyezes)
+        {
+            case 1:
+                pont = 7;
+                break;
+            case 2:
+                pont = 5;
+                break;
+            case 3:
+                pont = 4;
+                break;
+            case 4:
+                pont = 3;
+                break;
+            case 5:
+                pont = 2;
+                break;
+            case 6:
+                pont = 1;
+                break;
+            default:
+                break;
+        }
+        sw.WriteLine($"{sportag.Helyezes} {sportag.SportolokSzama} {pont} {sportag.SportagNeve} {sportag.VersenyszamNeve}");
+    }
+}
